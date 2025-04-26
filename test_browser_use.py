@@ -155,7 +155,7 @@ async def test_browser_use_custom():
     use_vision = True  # Set to False when using DeepSeek
 
     max_actions_per_step = 10
-    playwright = None
+    playwright = True
     browser = None
     browser_context = None
 
@@ -188,8 +188,19 @@ async def test_browser_use_custom():
                 ),
             )
         )
+
+        # Define the path to the text file
+        file_path = "/workspaces/assistant_container_dev/assistant_modal/output/index/index_web_search.txt"
+
+        # Read the content of the text file and store it in a variable
+        with open(file_path, "r") as file:
+            file_content = file.read()
+
+        # Now you can use file_content as a variable
+        print(file_content)
+
         agent = CustomAgent(
-            task="search for 'lofi beats' on youtube and return the first video title",
+            task=file_content,
             add_infos="",  # some hints for llm to complete the task
             llm=llm,
             browser=browser,

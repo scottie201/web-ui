@@ -1,0 +1,31 @@
+
+Step 1: Clone the repository
+---------------------------------
+git clone <REPO_URL>
+
+Step 2: Navigate into the project directory
+-------------------------------------------
+cd /workspaces/assistant_container_dev/web-ui
+
+Step 3: Create and activate the virtual environment
+---------------------------------------------------
+python3 -m venv .venv
+source .venv/bin/activate
+
+Step 4: Install the requirements
+---------------------------------
+pip install -r requirements.txt
+
+Step 5: Install Playwright dependencies
+----------------------------------------
+# On Ubuntu or Debian-based systems
+sudo apt-get install libnss3     libnspr4     libatk1.0-0     libatk-bridge2.0-0     libcups2     libx11-6     libxcomposite1     libxdamage1     libxext6     libxfixes3     libxrandr2     libgbm1     libxcb1     libxkbcommon0     libpango-1.0-0     libcairo2     libasound2     libatspi2.0-0
+
+Step 6: Install Playwright browser dependencies
+------------------------------------------------
+# This installs Playwright browser dependencies
+playwright install-deps
+
+Step 7: Install Playwright itself
+----------------------------------
+playwright install
